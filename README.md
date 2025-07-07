@@ -6,6 +6,8 @@
 
 REST est un style d'architecture logicielle défini par Roy Fielding en 2000 dans sa thèse de doctorat. Il s'agit d'un ensemble de contraintes qui, lorsqu'elles sont appliquées comme un tout, permettent de créer des services web scalables et maintenables.
 
+![image](https://cdn.prod.website-files.com/5ff66329429d880392f6cba2/660c2294bf94571e7579bdde_467-min.jpg)
+
 **Principes fondamentaux de REST :**
 
 1. **Architecture client-serveur** : Séparation claire des préoccupations entre client et serveur
@@ -21,6 +23,8 @@ REST est un style d'architecture logicielle défini par Roy Fielding en 2000 dan
 ### Principes de gRPC (Google Remote Procedure Call)
 
 gRPC est un framework RPC (Remote Procedure Call) moderne et open source développé par Google. Il permet aux applications distribuées de communiquer efficacement en appelant des procédures à distance comme si elles étaient locales.
+
+![image](https://cdn.prod.website-files.com/5ff66329429d880392f6cba2/660c22adf74e44dbd627e70b_468-min.jpg)
 
 **Principes fondamentaux de gRPC :**
 
