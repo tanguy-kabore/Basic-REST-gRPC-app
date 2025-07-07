@@ -119,7 +119,7 @@ bibliotheque-api/
 1. Cloner le répertoire:
 
 ```bash
-git clone <URL-du-repo>
+git clone https://github.com/tanguy-kabore/Basic-REST-gRPC-app.git
 cd bibliotheque-api
 ```
 
