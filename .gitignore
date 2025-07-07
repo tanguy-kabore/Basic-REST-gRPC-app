@@ -53,7 +53,7 @@ tmp/
 *_grpc_pb.d.ts
 
 # Données MongoDB locales
-data/
+# data/
 mongodb/
 
 # Fichiers de test
