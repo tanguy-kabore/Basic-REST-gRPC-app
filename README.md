@@ -120,7 +120,7 @@ bibliotheque-api/
 
 ```bash
 git clone https://github.com/tanguy-kabore/Basic-REST-gRPC-app.git
-cd bibliotheque-api
+cd Basic-REST-gRPC-app
 ```
 
 2. Installer les dépendances pour chaque composant:
