@@ -1,5 +1,7 @@
 # Système de Gestion de Bibliothèque - Comparaison REST vs gRPC
 
+![image](https://cdn.prod.website-files.com/63d926b37ec0d886c2d5d538/66bb66942fc4f72d06c290b3_6694de3f901ec6665122e9f7_gRPC-and-REST-API.webp)
+
 ## 📚 Introduction théorique: REST vs gRPC
 
 ### Principes de REST (Representational State Transfer)
