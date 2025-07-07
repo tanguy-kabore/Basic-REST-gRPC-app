@@ -1,0 +1,137 @@
+syntax = "proto3";
+package bibliotheque;
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+// Service de gestion des livres
+service LivreService {
+// Récupérer tous les livres (avec pagination)
+rpc ObtenirLivres ( RequeteLivres ) returns ( ReponseLivres ) ;
+// Récupérer un livre par son ID
+rpc ObtenirLivre ( RequeteId ) returns ( Livre ) ;
+// Créer un nouveau livre
+rpc CreerLivre ( Livre ) returns ( Livre ) ;
+// Mettre à jour un livre
+rpc MettreAJourLivre ( Livre ) returns ( Livre ) ;
+// Supprimer un livre
+rpc SupprimerLivre ( RequeteId ) returns ( ReponseStatut ) ;
+// Rechercher des livres
+rpc RechercherLivres ( RequeteRecherche ) returns ( ReponseLivres ) ;
+// Emprunter un livre
+rpc EmprunterLivre ( RequeteEmprunt ) returns ( Livre ) ;
+// Retourner un livre
+rpc RetournerLivre ( RequeteEmprunt ) returns ( Livre ) ;
+// Obtenir des statistiques
+rpc ObtenirStatistiques ( google.protobuf.Empty ) returns (
+ReponseStatistiques ) ;
+}
+// Service de gestion des utilisateurs
+service UtilisateurService {
+// Récupérer tous les utilisateurs (avec pagination)
+rpc ObtenirUtilisateurs ( RequeteUtilisateurs ) returns (
+ReponseUtilisateurs ) ;
+// Récupérer un utilisateur par son ID
+rpc ObtenirUtilisateur ( RequeteId ) returns ( Utilisateur ) ;
+// Créer un nouvel utilisateur
+rpc CreerUtilisateur ( Utilisateur ) returns ( Utilisateur ) ;
+// Mettre à jour un utilisateur
+rpc MettreAJourUtilisateur ( Utilisateur ) returns ( Utilisateur ) ;
+// Supprimer un utilisateur
+rpc SupprimerUtilisateur ( RequeteId ) returns ( ReponseStatut ) ;
+// Obtenir les livres empruntés par un utilisateur
+rpc ObtenirLivresEmpruntes ( RequeteId ) returns ( ReponseLivres ) ;
+// Obtenir l'historique des emprunts d'un utilisateur
+rpc ObtenirHistoriqueEmprunts ( RequeteId ) returns ( ReponseHistorique ) ;
+}
+
+// Message représentant un livre
+message Livre {
+string id = 1;
+string titre = 2;
+string auteur = 3;
+string isbn = 4;
+int32 anneePublication = 5;
+string genre = 6;
+string description = 7;
+bool disponible = 8;
+string emprunteurId = 9;
+google.protobuf.Timestamp dateEmprunt = 10;
+int32 nbEmprunts = 11;
+}
+// Message représentant un utilisateur
+message Utilisateur {
+string id = 1;
+string nom = 2;
+string prenom = 3;
+string email = 4;
+repeated string livresEmpruntes = 5;
+repeated EmpruntHistorique historique = 6;
+}
+// Message représentant un emprunt dans l'historique
+message EmpruntHistorique {
+string livreId = 1;
+string titreLivre = 2;
+google.protobuf.Timestamp dateEmprunt = 3;
+google.protobuf.Timestamp dateRetour = 4;
+}
+// Requête pour obtenir des livres avec pagination
+message RequeteLivres {
+int32 page = 1;
+int32 limite = 2;
+}
+// Réponse contenant une liste de livres avec pagination
+message ReponseLivres {
+repeated Livre livres = 1;
+int32 total = 2;
+int32 page = 3;
+int32 pages = 4;
+}
+// Requête contenant un ID
+message RequeteId {
+string id = 1;
+}
+// Requête pour rechercher des livres
+message RequeteRecherche {
+string terme = 1;
+string champ = 2; // titre, auteur, genre, etc.
+}
+// Requête pour emprunter ou retourner un livre
+message RequeteEmprunt {
+string livreId = 1;
+string utilisateurId = 2;
+}
+// Réponse indiquant le statut d'une opération
+message ReponseStatut {
+bool succes = 1;
+string message = 2;
+}
+// Réponse contenant des statistiques
+message ReponseStatistiques {
+repeated LivrePopulaire livresPopulaires = 1;
+int32 totalEmprunts = 2;
+double moyenneEmprunts = 3;
+int32 totalLivres = 4;
+}
+// Message représentant un livre populaire dans les statistiques
+message LivrePopulaire {
+string id = 1;
+string titre = 2;
+string auteur = 3;
+int32 nbEmprunts = 4;
+}
+// Requête pour obtenir des utilisateurs avec pagination
+message RequeteUtilisateurs {
+int32 page = 1;
+int32 limite = 2;
+}
+// Réponse contenant une liste d'utilisateurs avec pagination
+message ReponseUtilisateurs {
+repeated Utilisateur utilisateurs = 1;
+int32 total = 2;
+int32 page = 3;
+int32 pages = 4;
+}
+// Réponse contenant l'historique des emprunts d'un utilisateur
+message ReponseHistorique {
+repeated EmpruntHistorique emprunts = 1;
+int32 total = 2;
+}

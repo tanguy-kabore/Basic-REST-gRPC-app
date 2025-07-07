@@ -1,0 +1,15 @@
+{
+    "name": "rest-client",
+    "version": "1.0.0",
+    "description": "Client REST pour tester l'API de la bibliothèque",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node src/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "axios": "^1.2.1",
+        "dotenv": "^16.0.3",
+        "chalk": "^4.1.2"
+    }
+}
