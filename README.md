@@ -2,11 +2,15 @@
 
 ![image](https://cdn.prod.website-files.com/63d926b37ec0d886c2d5d538/66bb66942fc4f72d06c290b3_6694de3f901ec6665122e9f7_gRPC-and-REST-API.webp)
 
+![image](https://miro.medium.com/v2/resize:fit:740/1*Ijzagnux2EhithLN2qzliA.jpeg)
+
 ## 📚 Introduction théorique: REST vs gRPC
 
 ### Principes de REST (Representational State Transfer)
 
 REST est un style d'architecture logicielle défini par Roy Fielding en 2000 dans sa thèse de doctorat. Il s'agit d'un ensemble de contraintes qui, lorsqu'elles sont appliquées comme un tout, permettent de créer des services web scalables et maintenables.
+
+![image](https://businesscentralgeek.com/wp-content/uploads/2023/12/image-7.png)
 
 ![image](https://cdn.prod.website-files.com/5ff66329429d880392f6cba2/660c2294bf94571e7579bdde_467-min.jpg)
 
@@ -25,6 +29,10 @@ REST est un style d'architecture logicielle défini par Roy Fielding en 2000 dan
 ### Principes de gRPC (Google Remote Procedure Call)
 
 gRPC est un framework RPC (Remote Procedure Call) moderne et open source développé par Google. Il permet aux applications distribuées de communiquer efficacement en appelant des procédures à distance comme si elles étaient locales.
+
+![image](https://docs.oracle.com/en/middleware/standalone/weblogic-server/14.1.1.0/saclt/img/corba_idl.png)
+
+![image](https://miro.medium.com/v2/resize:fit:808/1*oP0uG515-rrd5KowRFnVVw.png)
 
 ![image](https://cdn.prod.website-files.com/5ff66329429d880392f6cba2/660c22adf74e44dbd627e70b_468-min.jpg)
 
